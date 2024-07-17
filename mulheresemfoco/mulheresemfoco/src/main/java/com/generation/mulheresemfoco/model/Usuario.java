@@ -8,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -25,13 +26,14 @@ public class Usuario {
 	private String nome;
 	
 	@NotNull(message = "O atributo 'usuario' é obrigatório!")
-	@Size(max = 100)
+	@Email(message = "O atributo usuário deve ter um e-mail válido")
 	private String usuario;
 	
 	@NotNull(message = "O atributo 'senha' é obrigatório!")
 	@Size(min = 6, message = "O atributo 'senha' deve conter no mínimo 6 caracteres")
 	private String senha;
 	
+	@Size(max = 5000, message = "O link da foto não pode ser maior do que 5000 caracteres")
 	private String foto;
 	
 	@ManyToOne
