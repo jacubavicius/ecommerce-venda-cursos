@@ -22,7 +22,7 @@ public class Usuario {
 	private Long id;
 	
 	@NotBlank(message = "O atributo 'nome' é obrigatório!")
-	@Size(min = 5, max = 100, message = "O atributo 'nome' deve conter no mínimo 5 caracteres")
+	@Size(min = 3, max = 100, message = "O atributo 'nome' deve conter no mínimo 3 caracteres")
 	private String nome;
 	
 	@NotNull(message = "O atributo 'usuario' é obrigatório!")
